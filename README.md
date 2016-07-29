@@ -14,3 +14,6 @@ You can use Pixel's sprites at www.cavestory.org!
 ## Dependencies
 1. SDL1.3
 2. SDL_image
+
+## News & Updates
+* 7/28/2016: I separated input into it's own class and the player class will now be in charge of actually moving the sprite.
