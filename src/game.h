@@ -3,21 +3,22 @@
 
 #include <boost/scoped_ptr.hpp>
 
-class Sprite;
+class Player;
 class Graphics;
 
 struct Game {
 	Game();
 	~Game();
 
-	static int kTileSize;
+// static for tile size
+static int kTileSize;
 
 private:
 	void eventLoop();
 	void update(int elapsed_time_ms);
 	void draw(Graphics& graphics);
 
-	boost::scoped_ptr<Sprite> sprite_;
+	boost::scoped_ptr<Player> player_;
 
 };
 

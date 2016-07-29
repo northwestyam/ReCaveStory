@@ -8,7 +8,7 @@ namespace {
 }
 
 Graphics::Graphics() {
-	screen = SDL_SetVideoMode(	kScreenWidth,
+	screen_ = SDL_SetVideoMode(	kScreenWidth,
 								kScreenHeight,
 								kBitsPerPixel,
 								SDL_SWSURFACE);
@@ -16,15 +16,20 @@ Graphics::Graphics() {
 }
 
 Graphics::~Graphics() {
-	SDL_FreeSurface(screen);
+	SDL_FreeSurface(screen_);
 }
 
 void Graphics::blitSurface(	SDL_Surface* source,
 							SDL_Rect* source_rectangle,
 							SDL_Rect* destination_rectangle) {
-	SDL_BlitSurface(source, source_rectangle, screen, destination_rectangle);
+	SDL_BlitSurface(source, source_rectangle, screen_, destination_rectangle);
+}
+
+void Graphics::clear() {
+	// clears the backbuffer so the next draw is much cleaner
+	SDL_FillRect(screen_, NULL, 0);
 }
 
 void Graphics::flip() {
-	SDL_Flip(screen);
+	SDL_Flip(screen_);
 }

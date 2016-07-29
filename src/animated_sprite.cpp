@@ -23,6 +23,7 @@ void AnimatedSprite::update(int elapsed_time_ms) {
 			source_rect_.x += Game::kTileSize;
 		}
 		else {
+			// make sure source_rect_.x can't use an illegal value
 			source_rect_.x -= Game::kTileSize * (num_frames_ - 1);
 			current_frame_ = 0;
 		}

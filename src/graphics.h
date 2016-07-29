@@ -12,10 +12,11 @@ public:
 	void blitSurface(	SDL_Surface* source,
 						SDL_Rect* source_rectangle,
 						SDL_Rect* destination_rectangle);
+	void clear();
 	void flip();
 
 private:
-	SDL_Surface* screen;
+	SDL_Surface* screen_;
 };
 
 #endif /* GRAPHICS_H_ */
