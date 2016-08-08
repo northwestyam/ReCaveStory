@@ -15,18 +15,18 @@
 #include "sprite.h"
 
 // inherits from sprite
-class AnimatedSprite : public Sprite
-{
+class AnimatedSprite : public Sprite {
 public:
 	// Constructor must take all of sprite's parameters
-	AnimatedSprite(	const std::string& file_path,
+	AnimatedSprite(	Graphics& graphics,
+					const std::string& file_path,
 					int source_x, int source_y,
 					int width, int height,
 					int fps, int num_frames);
 	void update(int elapsed_time_ms);
 
 // how many frames do i want to run in 1 second
-// or how many millisenconds do I want this to run?
+// or how many milliseconds do I want this to run?
 private:
 	const int frame_time_;
 	const int num_frames_;
